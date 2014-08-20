@@ -7,6 +7,14 @@
  * and the included README.md file for license terms and conditions.
  */
 
+var onDeviceReady=function(){                             // called when Cordova is ready
+   if( window.Cordova && navigator.splashscreen ) {     // Cordova API detected
+        navigator.splashscreen.hide() ;                 // hide splash screen
+    }
+} ;
+document.addEventListener("deviceready", onDeviceReady, false) ;
+
+
 
 /* manage data needed for app (movies from Rotten Tomatoes web API) */
 var dataSource = {
